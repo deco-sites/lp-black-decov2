@@ -43,7 +43,7 @@ export default function Hero({
   ],
 }: Props) {
   return (
-    <div className="flex items-center px-8 py-10 md:px-12 md:py-16 lg:px-16  gap-16 md: lg:py-20 lg:max-w-[1440px] xl:px-16">
+    <div className="flex items-center px-8 py-10 mx-auto md:px-12 md:py-16 lg:px-16  gap-16 md: lg:py-20 lg:max-w-[1440px] xl:px-16">
       <div class="flex flex-col-reverse items-start justify-between self-sttretch font-albert-sans md:gap-4 lg:gap-6 xl:gap-12 md:flex-row lg:container lg:max-w-[1440px] text-xl md:text-base">
         <div class="flex flex-col gap-8 md:w-[46%] lg:max-w-[561px] items-start">
           <div class="text-black opacity-60 leading-3">{preHeadline}</div>

@@ -35,7 +35,7 @@ export default function ParagraphList({
 }: Props) {
   return (
     <>
-      <div class=" w-full flex font-albert-sans flex-col pb-20 px-8 gap-16 md:px-12 lg:px-16 lg:pb-28 pt-8 lg:flex-row items-center lg:items-start justify-center lg:max-w-[1440px] text-xl md:text-base">
+      <div class=" w-full mx-auto flex font-albert-sans flex-col pb-20 px-8 gap-16 md:px-12 lg:px-16 lg:pb-28 pt-8 lg:flex-row items-center lg:items-start justify-center lg:max-w-[1440px] text-xl md:text-base">
         <div className="flex flex-col justify-between self-stretch items-center lg:container max-w-[1440px] lg:items-start lg:flex-row">
           <div className="flex flex-col w-full items-center mb-16 gap-4 self-stretch lg:items-start lg:mb-0 lg:max-w-[48%] xl:max-w-[619px]">
             <h2 class="flex-none font-bold text-3xl lg:text-4xl/[110%] xl:text-5xl/[110%] pb-2 w-full">
