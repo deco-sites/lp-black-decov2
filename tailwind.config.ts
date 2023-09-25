@@ -23,4 +23,20 @@ export const theme = {
 
 export default {
   content: ["./**/*.tsx"],
+  theme: {
+    extend: {
+      fontFamily: {
+        "albert-sans": ["Albert Sans", "sans-serif"],
+        // Adicione outros nomes de fonte e configurações conforme necessário
+      },
+      fontSize: {
+        "3.5xl": ["2rem", "118%"], // Adicionando um tamanho personalizado (3.5xl)
+        "6.5xl": ["4rem", "115%"], // Adicionando um tamanho personalizado (6.5xl)
+      },
+      colors: {
+        "h1-color": "#1F261F",
+        "h2-color": "#0A2121",
+      },
+    },
+  },
 };
