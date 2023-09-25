@@ -1,50 +1,67 @@
-import type { HTML } from "deco-sites/std/components/HTMLRenderer.tsx";
-
-/** @title {{{title}}} */
-export interface Paragraph {
-    title: string;
-    text: HTML;
-}
+import type { Image as DecoImage } from "deco-sites/std/components/types.ts";
+import InterestForm from "../components/ui/InterestForm.tsx";
+import type { Props as InterestFormProps } from "../components/ui/InterestForm.tsx";
+import type { HTML } from "deco-sites/std/components/types.ts";
 
 export interface Props {
-    title?: string;
-    items?: Array<Paragraph>;
+  title?: string;
+  text?: HTML;
+  form?: InterestFormProps;
+  titleBottom?: string;
+  source?: DecoImage;
+  speakerName?: string;
+  speakerRole?: string;
+  subText?: HTML;
 }
 
 export default function ParagraphList({
-    title = "Main Features",
-    items = [
-        {
-            title: "Easy to use page builder",
-            text: "Design high-converting shopping experiences with a powerful, visual builder. Your business team with the autonomy to modify components without writing a single line of code.",
-        }, {
-            title: "Create A/B tests in 5 secs",
-            text: "No complicated set-up here, simply select a page or section you want to test ideas on, and get testing! Try experimenting with different headlines, sales copy, or product descriptions and quickly learn which idea converts the best.",
-        }, {
-            title: "Craft unique experiences",
-            text: "Conversion-driven storefronts that are optimized for each audience, increasing engagement and conversion rates.",
-        }, {
-            title: "Analyze your data",
-            text: "Integrated real-time analytics to identify the greatest opportunities to boost conversions.",
-        }
-    ]
+  title = "O que você vai ver",
+  text =
+    "A Black Friday está chegando. E a sua loja está pronta?Criar uma landing page alta conversão é uma das melhores maneiras de fazer isso. Uma landing page bem-feita pode ajudar a direcionar o tráfego para sua loja online, aumentar o seu brand awareness e impulsionar as vendas. Ao final deste webinar, você estará pronto para construir sua própria landing page otimizada, com performance incomparável, para a Black Friday. O que vamos lhe mostrar: Dicas de como criar um landing page de alta conversão Como você pode se preparar para a Black Friday A criação de uma página ao vivo em 5 minutos usando deco.cx",
+  form: _form,
+  titleBottom = "Palestrante",
+  source = "/Baby_01 1.png",
+  speakerName = "Rafael Crespo",
+  speakerRole = "co-Founder e CRO na deco.cx",
+  subText =
+    "Rafael, mais conhecido como Baby, Lorem ipsum dolor sit amet consectetur. Aliquet felis porttitor neque in dictumst lacus et platea. Tellus est venenatis sed pellentesque.",
 }: Props) {
-    return (
-        <div class="lg:container mx-8 md:mx-16 lg:mx-auto mb-8 lg:mb-20 pt-8 lg:border-t flex flex-col lg:flex-row gap-10 text-xl md:text-base">
-            <h2 class="flex-none lg:w-56 font-bold pb-2 border-b lg:border-none">{title}</h2>
-            <div class="flex-auto flex flex-col gap-8">
-                {
-                    items.map(item => {
-                        return (
-                            <div class="flex flex-col md:flex-row md:pb-8 lg:border-b gap-2 md:gap-4 lg:gap-16">
-                                <h3 class="flex-none font-bold md:w-2/5 lg:w-52">{item.title}</h3>
-                                <div class="flex-auto" dangerouslySetInnerHTML={{ __html: item.text }}></div>
-                                <div class="hidden xl:block flex-none w-40"></div>
-                            </div>
-                        )
-                    })
-                }
+  return (
+    <>
+      <div class="flex font-albert-sans flex-col pb-20 px-8 gap-16 md:px-12 lg:px-16 lg:pb-28 pt-8 lg:flex-row items-center lg:items-start justify-center lg:max-w-[1440px] text-xl md:text-base">
+        <div className="flex flex-col justify-between self-stretch items-center lg:container max-w-[1440px] lg:items-start lg:flex-row">
+          <div className="flex flex-col w-full items-center mb-16 gap-4 self-stretch lg:items-start lg:mb-0 lg:max-w-[48%] xl:max-w-[619px]">
+            <h2 class="flex-none font-bold text-3xl lg:text-4xl/[110%] xl:text-5xl/[110%] pb-2">{title}</h2>
+            <div
+              class="text-black opacity-60 text-xl"
+              dangerouslySetInnerHTML={{ __html: text }}
+            />
+          </div>
+          <div className="flex gap-16 flex-col lg:w-[411px] xl:w-[511px]">
+            <InterestForm {..._form} />
+            <div className="flex flex-col items-start gap-4 self-stretch">
+              <h3 className="items-center text-center font-normal text-2xl xl:text-[2rem] leading-[118.75%] text-[#0a2121] opacity-90">
+                {titleBottom}
+              </h3>
+              <div className="flex self-stretch items-center gap-4">
+                <img
+                  class="object-cover rounded-full w-[100px]"
+                  src={source}
+                  alt={title}
+                />
+                <div className="flex flex-col items-start text-black flex-1">
+                  <h4 class="font-bold leading-[118.75%] text-xl">{speakerName}</h4>
+                  <p class="text-base font-normal opacity-60">{speakerRole}</p>
+                </div>
+              </div>
+              <div
+                class="text-lg xl:text-xl text-black font-normal opacity-60 leading-[150%]"
+                dangerouslySetInnerHTML={{ __html: subText }}
+              />
             </div>
+          </div>
         </div>
-    )
+      </div>
+    </>
+  );
 }
