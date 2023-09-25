@@ -31,7 +31,7 @@ export default {
       },
       fontSize: {
         "3.5xl": ["2rem", "118%"], // Adicionando um tamanho personalizado (3.5xl)
-        "6.5xl": ["4rem", "115%"], // Adicionando um tamanho personalizado (6.5xl)
+        "6.5xl": ["4rem", "100%"], // Adicionando um tamanho personalizado (6.5xl)
       },
       colors: {
         "h1-color": "#1F261F",

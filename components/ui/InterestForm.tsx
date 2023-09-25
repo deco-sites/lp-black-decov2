@@ -33,7 +33,7 @@ export default function ContactUs(
         <span class="hidden lg:w-[352px] lg:h-[900px] lg:block lg:absolute lg:right-0 lg:-top-24 lg:bg-contact-us-bg-gradient lg:rotate-[333deg] lg:-z-10">
         </span>
         <form
-          class="flex flex-col justify-center items-center bg-white border border-dark-green rounded-2xl p-4 md:p-8 gap-6 placeholder-[#161A16] "
+          class="flex flex-col justify-center items-center text-base md:text-xl bg-white border border-dark-green rounded-2xl p-4 md:p-8 gap-6 placeholder-[#161A16] "
           method="POST"
           action="/api/sendLead.tsx"
         >
@@ -79,7 +79,7 @@ export default function ContactUs(
               "Quer acrescentar algo? (opcional)"}
           />
           <input
-            class="w-full h-[51px] bg-[#0A2121] text-white rounded-[4px] cursor-pointer"
+            class="w-full h-[51px] bg-[#0A2121] text-white text-lg font-semibold rounded-[4px] cursor-pointer"
             type="submit"
             value={formInfor?.submiteName || "Reserve agora"}
           />
