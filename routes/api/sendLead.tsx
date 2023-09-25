@@ -2,7 +2,7 @@ import type { Handlers } from "$fresh/server.ts";
 import getSupabaseClient from "$live/supabase.ts";
 import type { LiveState } from "$live/types.ts";
 
-const ZAPIER_WEBHOOK = Deno.env.get("LP_BLACK_DECO_V2_WEBHOOK"); 
+const ZAPIER_WEBHOOK = Deno.env.get("LP_BLACK_DECO_V2_WEBHOOK");
 
 export const handler: Handlers<null, LiveState> = {
   POST: async (req) => {
@@ -24,7 +24,7 @@ export const handler: Handlers<null, LiveState> = {
 
     await getSupabaseClient().from("form_submission").insert({
       data: formData,
-      site_id: 1, 
+      site_id: 1,
     });
 
     const lang = formData.lang == "en" ? "en" : "pt";
